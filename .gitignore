@@ -1,0 +1,6 @@
+/target
+/dist
+/.wrangler
+crates/worker/target
+crates/worker/build
+Cargo.lock
