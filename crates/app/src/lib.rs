@@ -42,17 +42,14 @@ pub fn mount() {
                     .ok()
                     .and_then(|s| s.as_string())
                     .unwrap_or_else(|| "/".to_string());
-                let _ = window
-                    .history()
+                let _ = window.history().ok().and_then(|h| {
+                    h.replace_state_with_url(
+                        &wasm_bindgen::JsValue::NULL,
+                        "",
+                        Some(&decoded),
+                    )
                     .ok()
-                    .and_then(|h| {
-                        h.replace_state_with_url(
-                            &wasm_bindgen::JsValue::NULL,
-                            "",
-                            Some(&decoded),
-                        )
-                        .ok()
-                    });
+                });
             }
         }
     }
