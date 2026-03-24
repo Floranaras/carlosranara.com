@@ -4,3 +4,7 @@ backend = "http://localhost:3001/api"
 
 [build]
 target = "index.html"
+dist = "dist"
+
+[watch]
+paths = ["crates/app/src", "style", "index.html"]

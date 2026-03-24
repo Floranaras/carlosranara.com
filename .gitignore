@@ -4,3 +4,4 @@
 crates/worker/target
 crates/worker/build
 Cargo.lock
+crates/app/dist/
