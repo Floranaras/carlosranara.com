@@ -117,6 +117,7 @@ fn cors_headers(mut response: Response) -> Result<Response> {
     headers.set("Access-Control-Allow-Origin", "*")?;
     headers.set("Access-Control-Allow-Methods", "GET")?;
     headers.set("Content-Type", "application/json")?;
+    headers.set("Cache-Control", "public, max-age=86400")?;
     Ok(response)
 }
 
