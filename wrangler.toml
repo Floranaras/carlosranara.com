@@ -3,6 +3,5 @@ main = "crates/worker/build/index.js"
 compatibility_date = "2024-01-01"
 
 [build]
-command = "cargo install worker-build && cd crates/worker && worker-build --release"
-
-# wrangler secret put GITHUB_TOKEN
+command = "cargo install worker-build && worker-build --release"
+cwd = "crates/worker"
