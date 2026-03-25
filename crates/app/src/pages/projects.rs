@@ -1,4 +1,5 @@
 use leptos::*;
+use leptos::html;
 use crate::data::{all_projects, Category};
 
 fn category_color(cat: &Category) -> &'static str {
@@ -116,25 +117,38 @@ pub fn Projects() -> impl IntoView {
 
                                                 <div class="aspect-video mb-6 bg-rose-pine-overlay relative overflow-hidden flex items-center justify-center">
                                                     <div class=format!("absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] {from_class} via-transparent to-transparent")></div>
-                                                    {p.thumbnail.map(|src| {
-                                                        if src.ends_with(".webm") {
-                                                            view! {
-                                                                <video
-                                                                    src=src
-                                                                    autoplay=true
-                                                                    loop_=true
-                                                                    muted=true
-                                                                    playsinline=true
-                                                                    class="absolute inset-0 w-full h-full object-cover"
-                                                                ></video>
-                                                            }.into_view()
-                                                        } else {
-                                                            view! {
-                                                                <img src=src alt=p.title class="absolute inset-0 w-full h-full object-cover" />
-                                                            }.into_view()
-                                                        }
-                                                    })}
-                                                </div>
+                                                        {p.thumbnail.map(|src| {
+                                                            if src.ends_with(".webm") {
+                                                                let video_ref = create_node_ref::<html::Video>();
+                                                                
+                                                                // Crucial: Set properties explicitly when the element mounts
+                                                                create_effect(move |_| {
+                                                                    if let Some(video) = video_ref.get() {
+                                                                        video.set_loop(true);
+                                                                        video.set_muted(true);
+                                                                        let _ = video.play();
+                                                                    }
+                                                                });
+
+                                                                view! {
+                                                                    <video
+                                                                        node_ref=video_ref
+                                                                        src=src
+                                                                        autoplay=true
+                                                                        loop=true
+                                                                        prop:muted=true
+                                                                        playsinline=true
+                                                                        preload="auto"
+                                                                        class="absolute inset-0 w-full h-full object-cover"
+                                                                    ></video>
+                                                                }.into_view()
+                                                            } else {
+                                                                view! {
+                                                                    <img src=src alt=p.title class="absolute inset-0 w-full h-full object-cover" />
+                                                                }.into_view()
+                                                            }
+                                                        })}
+                                                    </div>
 
                                                 <h3 class="text-2xl font-bold text-rose-pine-text mb-2 group-hover:text-rose-pine-foam transition-colors">
                                                     {p.title}
