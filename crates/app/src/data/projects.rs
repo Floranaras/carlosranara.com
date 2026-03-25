@@ -54,7 +54,7 @@ pub fn all_projects() -> Vec<Project> {
             language: "Rust",
             github_url: "https://github.com/Floranaras/CarlOS",
             featured: true,
-            thumbnail: Some("/public/gifs/CarlOS-demo.gif"),
+            thumbnail: Some("/public/gifs/CarlOS-demo.webm"),
             stars: None,
         },
         Project {
@@ -67,7 +67,7 @@ pub fn all_projects() -> Vec<Project> {
             language: "C",
             github_url: "https://github.com/Floranaras/Python-compiler",
             featured: true,
-            thumbnail: Some("/public/gifs/python-intep.gif"),
+            thumbnail: Some("/public/gifs/python-intep.webm"),
             stars: None,
         },
         Project {
@@ -80,7 +80,7 @@ pub fn all_projects() -> Vec<Project> {
             language: "Rust",
             github_url: "https://github.com/Floranaras/rust-tetris",
             featured: true,
-            thumbnail: Some("/public/gifs/tetris-demo.gif"),
+            thumbnail: Some("/public/gifs/tetris-demo.webm"),
             stars: None,
         },
         Project {
@@ -93,7 +93,7 @@ pub fn all_projects() -> Vec<Project> {
             language: "C",
             github_url: "https://github.com/Floranaras/SokoBot",
             featured: true,
-            thumbnail: Some("/public/gifs/sokobot.gif"),
+            thumbnail: Some("/public/gifs/sokobot.webm"),
             stars: None,
         },
         Project {
@@ -106,7 +106,7 @@ pub fn all_projects() -> Vec<Project> {
             language: "Rust",
             github_url: "https://github.com/Floranaras/funnyvalentine",
             featured: true,
-            thumbnail: Some("/public/gifs/valentines.gif"),
+            thumbnail: Some("/public/gifs/valentines.webm"),
             stars: None,
         },
         Project {

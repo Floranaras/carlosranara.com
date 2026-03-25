@@ -83,7 +83,7 @@ pub fn timeline() -> Vec<TimelineItem> {
             description: "Decided to go full Arch. Riced with pink Rose Pine aesthetic. Wayland, \
                 Hyprland, the works. Dotfiles repo created.",
             learnings: Some("Configuration is an art form. Rice is life."),
-            image: Some("/public/screenshots/firstrice.png"),
+            image: Some("/public/screenshots/firstrice.webp"),
             dot_color: "bg-rose-pine-rose",
         },
         TimelineItem {
@@ -92,7 +92,7 @@ pub fn timeline() -> Vec<TimelineItem> {
             description: "Got a new laptop. Initial setup with Arch and Hyprland. Transferred \
                 my dotfiles and rice over.",
             learnings: Some("Dotfiles repos make fresh installs a breeze."),
-            image: Some("/public/screenshots/hyprlandarch.png"),
+            image: Some("/public/screenshots/hyprlandarch.webp"),
             dot_color: "bg-rose-pine-iris",
         },
         TimelineItem {
@@ -101,7 +101,7 @@ pub fn timeline() -> Vec<TimelineItem> {
             description: "Switched to i3 on the laptop for better battery life. Optimized for \
                 minimal resource usage. New dotfiles repo for this setup.",
             learnings: Some("Sometimes simplicity wins over aesthetics. Battery life matters."),
-            image: Some("/public/screenshots/i3rice.png"),
+            image: Some("/public/screenshots/i3rice.webp"),
             dot_color: "bg-rose-pine-gold",
         },
         TimelineItem {
