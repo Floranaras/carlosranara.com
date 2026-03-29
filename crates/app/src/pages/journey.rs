@@ -1,5 +1,5 @@
-use leptos::*;
 use crate::data::timeline;
+use leptos::*;
 
 #[component]
 pub fn LinuxJourney() -> impl IntoView {
@@ -96,14 +96,14 @@ fn TimelineCard(item: crate::data::TimelineItem, index: usize) -> impl IntoView 
 
     // Map dot color string to a Tailwind bg class
     let dot_bg = match item.dot_color {
-        c if c.contains("foam")   => "bg-rose-pine-foam",
-        c if c.contains("love")   => "bg-rose-pine-love",
-        c if c.contains("iris")   => "bg-rose-pine-iris",
-        c if c.contains("gold")   => "bg-rose-pine-gold",
-        c if c.contains("rose")   => "bg-rose-pine-rose",
-        c if c.contains("muted")  => "bg-rose-pine-muted",
-        c if c.contains("pine")   => "bg-primary",
-        _                          => "bg-primary",
+        c if c.contains("foam") => "bg-rose-pine-foam",
+        c if c.contains("love") => "bg-rose-pine-love",
+        c if c.contains("iris") => "bg-rose-pine-iris",
+        c if c.contains("gold") => "bg-rose-pine-gold",
+        c if c.contains("rose") => "bg-rose-pine-rose",
+        c if c.contains("muted") => "bg-rose-pine-muted",
+        c if c.contains("pine") => "bg-primary",
+        _ => "bg-primary",
     };
 
     view! {
@@ -115,8 +115,8 @@ fn TimelineCard(item: crate::data::TimelineItem, index: usize) -> impl IntoView 
                     on:click=move |_| set_expanded.update(|v| *v = !*v)
                 >
                     <div class="flex items-center gap-2 mb-3">
-                        <span class="material-symbols-outlined text-sm text-rose-pine-muted">"calendar_today"</span>
-                        <span class="text-[10px] text-rose-pine-muted uppercase tracking-wider">{item.date}</span>
+                        <span class="material-symbols-outlined text-sm text-rose-pine-subtle">"calendar_today"</span>
+                        <span class="text-[10px] text-rose-pine-subtle uppercase tracking-wider">{item.date}</span>
                     </div>
 
                     <h3 class="text-xl font-bold text-rose-pine-text mb-3 group-hover:text-primary transition-colors">
@@ -156,7 +156,7 @@ fn TimelineCard(item: crate::data::TimelineItem, index: usize) -> impl IntoView 
                         </div>
                     })}
 
-                    <div class="flex items-center gap-2 mt-4 text-xs text-rose-pine-muted">
+                    <div class="flex items-center gap-2 mt-4 text-xs text-rose-pine-subtle">
                         <span class="material-symbols-outlined text-sm transition-transform">"expand_more"</span>
                         <span>{move || if expanded.get() { "Show less" } else { "Click to expand" }}</span>
                     </div>

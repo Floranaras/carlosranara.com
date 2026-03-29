@@ -7,7 +7,7 @@ pub fn Footer() -> impl IntoView {
             <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
                 <div class="flex items-center gap-3">
                     <span class="material-symbols-outlined text-primary">"terminal"</span>
-                    <p class="text-xs text-rose-pine-muted">
+                    <p class="text-xs text-rose-pine-subtle">
                         "© 2024 Built with Rose Pine & Rust Philosophy"
                     </p>
                 </div>
@@ -28,7 +28,7 @@ pub fn Footer() -> impl IntoView {
                 </div>
 
                 <div class="text-right flex flex-col items-end gap-1">
-                    <div class="text-[10px] text-rose-pine-muted uppercase">"Kernel Version"</div>
+                    <div class="text-[10px] text-rose-pine-subtle uppercase">"Kernel Version"</div>
                     <div class="text-xs font-mono text-primary px-2 py-0.5 rounded border border-primary/20 bg-primary/5">
                         "6.8.9-arch1-1"
                     </div>
