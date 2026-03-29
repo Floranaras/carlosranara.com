@@ -180,7 +180,7 @@ fn StatBar(
 fn LangItem(name: String, pct: u32, color_class: String) -> impl IntoView {
     view! {
         <div class="flex items-center justify-between">
-            <span class="text-xs text-rose-pine-muted truncate pr-2">{name}</span>
+            <span class="text-xs text-rose-pine-subtle truncate pr-2">{name}</span>
             <span class=format!("text-sm font-bold {color_class}")>{pct}"%"</span>
         </div>
     }

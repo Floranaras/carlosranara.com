@@ -1,24 +1,24 @@
-use leptos::*;
-use leptos::html;
 use crate::data::{all_projects, Category};
+use leptos::html;
+use leptos::*;
 
 fn category_color(cat: &Category) -> &'static str {
     match cat {
         Category::Systems => "text-rose-pine-foam",
-        Category::Games   => "text-rose-pine-rose",
-        Category::Tui     => "text-rose-pine-iris",
-        Category::Tools   => "text-rose-pine-gold",
-        Category::All     => "text-primary",
+        Category::Games => "text-rose-pine-rose",
+        Category::Tui => "text-rose-pine-iris",
+        Category::Tools => "text-rose-pine-gold",
+        Category::All => "text-primary",
     }
 }
 
 fn category_from_label(cat: &Category) -> &'static str {
     match cat {
         Category::Systems => "from-rose-pine-foam",
-        Category::Games   => "from-rose-pine-rose",
-        Category::Tui     => "from-rose-pine-iris",
-        Category::Tools   => "from-rose-pine-gold",
-        Category::All     => "from-primary",
+        Category::Games => "from-rose-pine-rose",
+        Category::Tui => "from-rose-pine-iris",
+        Category::Tools => "from-rose-pine-gold",
+        Category::All => "from-primary",
     }
 }
 
@@ -36,8 +36,18 @@ pub fn Projects() -> impl IntoView {
         }
     };
 
-    let featured = move || filtered().into_iter().filter(|p| p.featured).collect::<Vec<_>>();
-    let repos    = move || filtered().into_iter().filter(|p| !p.featured).collect::<Vec<_>>();
+    let featured = move || {
+        filtered()
+            .into_iter()
+            .filter(|p| p.featured)
+            .collect::<Vec<_>>()
+    };
+    let repos = move || {
+        filtered()
+            .into_iter()
+            .filter(|p| !p.featured)
+            .collect::<Vec<_>>()
+    };
 
     view! {
         <div class="max-w-7xl mx-auto w-full animate-fade-in-up">
@@ -120,7 +130,7 @@ pub fn Projects() -> impl IntoView {
                                                         {p.thumbnail.map(|src| {
                                                             if src.ends_with(".webm") {
                                                                 let video_ref = create_node_ref::<html::Video>();
-                                                                
+
                                                                 // Crucial: Set properties explicitly when the element mounts
                                                                 create_effect(move |_| {
                                                                     if let Some(video) = video_ref.get() {
@@ -202,7 +212,7 @@ pub fn Projects() -> impl IntoView {
                                                 </div>
                                             </div>
                                             <h4 class="font-bold text-rose-pine-text mb-2">{p.title}</h4>
-                                            <p class="text-rose-pine-muted text-xs mb-4 line-clamp-2">{p.description}</p>
+                                            <p class="text-rose-pine-subtle text-xs mb-4 line-clamp-2">{p.description}</p>
                                             <div class="flex justify-between items-center">
                                                 <span class=format!("text-[10px] uppercase font-bold {cat_color}")>
                                                     {p.category.label()}

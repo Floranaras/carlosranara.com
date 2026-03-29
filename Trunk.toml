@@ -5,6 +5,7 @@ backend = "http://localhost:3001/api"
 [build]
 target = "index.html"
 dist = "dist"
+minify = "on_release"
 
 [watch]
 paths = ["crates/app/src", "style", "index.html"]
