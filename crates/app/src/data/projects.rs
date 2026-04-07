@@ -65,7 +65,7 @@ pub fn all_projects() -> Vec<Project> {
             category: Category::Systems,
             tags: &["C", "Interpreter", "Systems"],
             language: "C",
-            github_url: "https://github.com/AmaneKai/Python-compiler",
+            github_url: "https://github.com/AmaneKai/Python-Interpreter",
             featured: true,
             thumbnail: Some("/public/gifs/python-intep.webm"),
             stars: None,
