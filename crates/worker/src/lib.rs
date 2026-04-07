@@ -138,7 +138,7 @@ pub async fn main(req: Request, env: Env, _ctx: Context) -> Result<Response> {
         .query_pairs()
         .find(|(k, _)| k == "username")
         .map(|(_, v)| v.into_owned())
-        .unwrap_or_else(|| "Floranaras".to_string());
+        .unwrap_or_else(|| "AmaneKai".to_string());
 
     let token = match env.secret("GITHUB_TOKEN") {
         Ok(s) => s.to_string(),

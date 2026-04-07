@@ -13,7 +13,7 @@ pub fn Header() -> impl IntoView {
             >
                 <span class="material-symbols-outlined text-primary">"terminal"</span>
                 <h2 class="text-lg font-bold leading-tight uppercase tracking-[0.2em]">
-                    "Floranaras"
+                    "Ranara"
                 </h2>
             </a>
 
@@ -50,7 +50,7 @@ pub fn Header() -> impl IntoView {
                 </nav>
 
                 <a
-                    href="https://github.com/Floranaras"
+                    href="https://github.com/AmaneKai"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="min-w-[84px] items-center justify-center rounded border border-primary text-primary hover:bg-primary/10 h-10 px-4 text-sm font-bold transition-all hidden md:flex"
@@ -99,7 +99,7 @@ pub fn Header() -> impl IntoView {
                                         })
                                         .collect_view()}
                                     <a
-                                        href="https://github.com/Floranaras"
+                                        href="https://github.com/AmaneKai"
                                         target="_blank"
                                         class="mt-4 min-w-[84px] flex items-center justify-center rounded border border-primary text-primary hover:bg-primary/10 h-10 px-4 text-sm font-bold transition-all"
                                         style="text-decoration: none;"

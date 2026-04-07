@@ -13,14 +13,14 @@ pub fn Footer() -> impl IntoView {
                 </div>
 
                 <div class="flex gap-6">
-                    <SocialLink href="https://github.com/Floranaras" icon="hub" label="github" />
+                    <SocialLink href="https://github.com/AmaneKai" icon="hub" label="github" />
                     <SocialLink
                         href="https://www.youtube.com/@Amane-Kai"
                         icon="video_library"
                         label="youtube"
                     />
                     <SocialLink
-                        href="https://github.com/Floranaras/dotfiles/tree/master/nvim/.config/nvim"
+                        href="https://github.com/AmaneKai/dotfiles/tree/master/nvim/.config/nvim"
                         icon="settings_ethernet"
                         label="neovim"
                     />

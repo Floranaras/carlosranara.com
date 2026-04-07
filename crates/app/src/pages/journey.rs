@@ -59,7 +59,7 @@ pub fn LinuxJourney() -> impl IntoView {
                     "Every version of my Linux Rice is archived. Feel free to fork, steal modules, or get inspired for your next build."
                 </p>
                 <div class="flex flex-wrap gap-4 justify-center">
-                    <a href="https://github.com/Floranaras" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/AmaneKai" target="_blank" rel="noopener noreferrer"
                         class="px-6 py-3 rounded-lg bg-primary hover:bg-primary/80 text-white font-bold text-sm transition-all flex items-center gap-2 hover:scale-105">
                         <span class="material-symbols-outlined text-sm">"hub"</span>
                         "GitHub Repositories"

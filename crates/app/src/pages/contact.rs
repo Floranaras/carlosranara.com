@@ -80,12 +80,12 @@ pub fn Contact() -> impl IntoView {
                                 "[GITHUB]"
                             </div>
                             <a
-                                href="https://github.com/Floranaras"
+                                href="https://github.com/AmaneKai"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="font-mono hover:underline text-sm md:text-base break-all text-rose-pine-iris"
                             >
-                                "github.com/Floranaras"
+                                "github.com/AmaneKai"
                             </a>
                         </div>
                     </div>

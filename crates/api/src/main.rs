@@ -117,7 +117,7 @@ query($username: String!) {
 // ── Handler ───────────────────────────────────────────────────────────────────
 
 async fn github_stats(Query(params): Query<StatsQuery>) -> Json<serde_json::Value> {
-    let username = params.username.unwrap_or_else(|| "Floranaras".into());
+    let username = params.username.unwrap_or_else(|| "AmaneKai".into());
     let token = std::env::var("GITHUB_TOKEN").unwrap_or_default();
 
     if token.is_empty() {

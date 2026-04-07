@@ -61,7 +61,7 @@ carlosranara.com/
 ### Setup
 
 ```bash
-git clone https://github.com/Floranaras/carlosranara.com.git
+git clone https://github.com/AmaneKai/carlosranara.com.git
 cd carlosranara.com
 rustup target add wasm32-unknown-unknown
 cargo install trunk

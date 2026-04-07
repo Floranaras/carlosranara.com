@@ -28,7 +28,7 @@ pub fn HeroSection() -> impl IntoView {
 
                 <div class="flex flex-wrap gap-3">
                     <a
-                        href="https://github.com/Floranaras/dotfiles"
+                        href="https://github.com/AmaneKai/dotfiles"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -38,7 +38,7 @@ pub fn HeroSection() -> impl IntoView {
                         </button>
                     </a>
                     <a
-                        href="https://github.com/Floranaras/carlosranara.com"
+                        href="https://github.com/AmaneKai/carlosranara.com"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
