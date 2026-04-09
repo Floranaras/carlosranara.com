@@ -4,6 +4,7 @@ use leptos::*;
 
 fn category_color(cat: &Category) -> &'static str {
     match cat {
+        Category::Web => "text-rose-pine-foam",
         Category::Systems => "text-rose-pine-foam",
         Category::Games => "text-rose-pine-rose",
         Category::Tui => "text-rose-pine-iris",
@@ -14,6 +15,7 @@ fn category_color(cat: &Category) -> &'static str {
 
 fn category_from_label(cat: &Category) -> &'static str {
     match cat {
+        Category::Web => "from-rose-pine-foam",
         Category::Systems => "from-rose-pine-foam",
         Category::Games => "from-rose-pine-rose",
         Category::Tui => "from-rose-pine-iris",
@@ -196,6 +198,7 @@ pub fn Projects() -> impl IntoView {
                         <div class=move || if layout.get() == "grid" { "grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" } else { "flex flex-col gap-4" }>
                             {repositories.into_iter().map(|p| {
                                 let cat_color = match p.category {
+                                    Category::Web => "text-rose-pine-foam",
                                     Category::Tools   => "text-rose-pine-gold",
                                     Category::Systems => "text-primary",
                                     Category::Games   => "text-rose-pine-rose",
