@@ -21,7 +21,7 @@ fn lang_color_class(name: &str) -> &'static str {
         "text-primary",
         "text-rose-pine-love",
         "text-rose-pine-pine",
-        "text-rose-pine-subtle",
+        "text-rose-pine-text",
     ];
     let hash: usize = name.bytes().fold(0usize, |acc, b| acc.wrapping_add(b as usize));
     colors[hash % colors.len()]
