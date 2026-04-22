@@ -20,21 +20,9 @@ pub fn fallback_stats() -> GitHubStats {
             url: "https://github.com/Floranaras/carlosranara.com".into(),
         }),
         languages: vec![
-            GitHubLanguage {
-                name: "Rust".into(),
-                percentage: 62,
-                color: "rose-pine-foam".into(),
-            },
-            GitHubLanguage {
-                name: "TypeScript".into(),
-                percentage: 21,
-                color: "rose-pine-gold".into(),
-            },
-            GitHubLanguage {
-                name: "C".into(),
-                percentage: 17,
-                color: "rose-pine-iris".into(),
-            },
+            GitHubLanguage { name: "Rust".into(), percentage: 62 },
+            GitHubLanguage { name: "TypeScript".into(), percentage: 21 },
+            GitHubLanguage { name: "C".into(), percentage: 17 },
         ],
     }
 }
