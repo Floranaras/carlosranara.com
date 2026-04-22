@@ -12,18 +12,19 @@ fn format_number(n: u32) -> String {
     }
 }
 
-fn lang_color_class(color: &str) -> &'static str {
-    match color {
-        "rose-pine-foam" => "text-rose-pine-foam",
-        "rose-pine-gold" => "text-rose-pine-gold",
-        "rose-pine-iris" => "text-rose-pine-iris",
-        "rose-pine-rose" => "text-rose-pine-rose",
-        "primary" => "text-primary",
-        "rose-pine-love" => "text-rose-pine-love",
-        "rose-pine-pine" => "text-rose-pine-pine",
-        "rose-pine-subtle" => "text-rose-pine-subtle",
-        _ => "text-rose-pine-subtle",
-    }
+fn lang_color_class(name: &str) -> &'static str {
+    let colors = [
+        "text-rose-pine-foam",
+        "text-rose-pine-gold",
+        "text-rose-pine-iris",
+        "text-rose-pine-rose",
+        "text-primary",
+        "text-rose-pine-love",
+        "text-rose-pine-pine",
+        "text-rose-pine-subtle",
+    ];
+    let hash: usize = name.bytes().fold(0usize, |acc, b| acc.wrapping_add(b as usize));
+    colors[hash % colors.len()]
 }
 
 #[derive(Deserialize)]
@@ -115,7 +116,7 @@ pub fn AboutSection() -> impl IntoView {
                                             {langs
                                                 .into_iter()
                                                 .map(|l| {
-                                                    let cls = lang_color_class(&l.color).to_string();
+                                                    let cls = lang_color_class(&l.name).to_string();
                                                     view! {
                                                         <LangItem
                                                             name=l.name
