@@ -2,7 +2,7 @@
    
 Personal portfolio — full Rust stack. Frontend compiled to WASM via Leptos, GitHub stats
 proxied through a Cloudflare Worker, deployed to Cloudflare Pages.
-
+ 
 ## Stack
 
 | Layer      | Technology                          |
