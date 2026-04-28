@@ -17,4 +17,11 @@ npm install -g binaryen
 echo "Building frontend..."
 trunk build --release
 
+echo "Optimizing WASM..."
+WASM_FILE=$(find dist -name "*_bg.wasm" | head -1)
+if [ -n "$WASM_FILE" ]; then
+    wasm-opt --all-features -Oz -o "$WASM_FILE" "$WASM_FILE"
+    echo "WASM optimized: $WASM_FILE"
+fi
+
 echo "Build complete. Output in dist/"
