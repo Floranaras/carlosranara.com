@@ -61,11 +61,12 @@ pub fn HeroSection() -> impl IntoView {
                         height: clamp(10rem, 40vw, 24rem);
                     ">
                         <img
-                            src="/public/screenshots/pfp.webp"
-                            srcset="/public/screenshots/pfp.webp 1x"
+                            src="/public/screenshots/pfp-800.webp"
+                            srcset="/public/screenshots/pfp-400.webp 400w, /public/screenshots/pfp-800.webp 800w"
+                            sizes="(max-width: 640px) 40vw, 384px"
                             alt="Carlos Ranara"
-                            width="366"
-                            height="274"
+                            width="800"
+                            height="800"
                             loading="eager"
                             fetchpriority="high"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
