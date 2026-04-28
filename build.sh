@@ -11,6 +11,9 @@ rustup target add wasm32-unknown-unknown
 echo "Installing Trunk..."
 cargo install trunk
 
+echo "Installing wasm-opt..."
+npm install -g binaryen
+
 echo "Building frontend..."
 trunk build --release
 

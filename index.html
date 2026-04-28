@@ -21,9 +21,16 @@
     </noscript>
     <link data-trunk rel="css" href="style/output.css" />
     <link data-trunk rel="copy-dir" href="public" />
-    <link data-trunk rel="rust" href="crates/app/Cargo.toml" />
+    <link data-trunk rel="rust" href="crates/app/Cargo.toml" data-wasm-opt="z" />
   </head>
   <body>
+    <div id="loading" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#191724;z-index:9999;">
+      <style>@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}</style>
+      <span style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:1rem;color:#e0def4;">
+        <span style="color:#31748f;">carlos@ranara</span>:~$&nbsp;<span style="animation:blink 1s step-end infinite;color:#31748f;">_</span>
+      </span>
+    </div>
+    <script>window.addEventListener('TrunkApplicationStarted',function(){var e=document.getElementById('loading');if(e)e.remove();});</script>
     <div id="root"></div>
   </body>
 </html>
