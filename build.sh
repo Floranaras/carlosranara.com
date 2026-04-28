@@ -11,17 +11,18 @@ rustup target add wasm32-unknown-unknown
 echo "Installing Trunk..."
 cargo install trunk
 
-echo "Installing wasm-opt..."
-npm install -g binaryen
+# Wrap system wasm-opt to inject --all-features before Trunk calls it.
+# Rust WASM uses bulk-memory (memory.copy/fill) and nontrapping-float-to-int
+# opcodes that wasm-opt rejects without these flags.
+WASM_OPT_BIN=$(which wasm-opt 2>/dev/null || true)
+if [ -n "$WASM_OPT_BIN" ]; then
+    echo "Wrapping wasm-opt at $WASM_OPT_BIN to inject --all-features..."
+    cp "$WASM_OPT_BIN" "${WASM_OPT_BIN}.real"
+    printf '#!/bin/bash\nexec "%s.real" --all-features "$@"\n' "$WASM_OPT_BIN" > "$WASM_OPT_BIN"
+    chmod +x "$WASM_OPT_BIN"
+fi
 
 echo "Building frontend..."
 trunk build --release
-
-echo "Optimizing WASM..."
-WASM_FILE=$(find dist -name "*_bg.wasm" | head -1)
-if [ -n "$WASM_FILE" ]; then
-    wasm-opt --all-features -Oz -o "$WASM_FILE" "$WASM_FILE"
-    echo "WASM optimized: $WASM_FILE"
-fi
 
 echo "Build complete. Output in dist/"
